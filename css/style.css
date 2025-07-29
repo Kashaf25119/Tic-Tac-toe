@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    --bg-color: #0A0519;
+    --second-bg-color: #17122A;
+    --border-color: #2A2343;
+    --text-color: #fff;
+    --x-color: #1892EA;
+    --o-color: #A737FF;
+}
+
+main {
+    background: var(--bg-color);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    display: flex;
+    width: 235px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#header .player {
+    background: var(--second-bg-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 4px solid var(--second-bg-color);
+    border-radius: 12px;
+    opacity: .5;
+    transition: .3s;
+
+}
+
+#titleHeader {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#header .player:hover {
+    border: 4px solid var(--border-color);
+}
+
+#header .player-active {
+    opacity: 1;
+    border: 4px solid var(--border-color);
+}
+
+#header #xPlayerDisplay {
+    color: var(--x-color);
+}
+
+#header #oPlayerDisplay {
+    color: var(--o-color);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3,70px);
+    grid-template-rows: repeat(3,70px);
+    gap: 12px;
+}
+
+#board .cell {
+    background: var(--second-bg-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s background;
+}
+
+#board .cell:hover {
+    background: var(--border-color);
+}
+
+#restartBtn {
+    background: var(--second-bg-color);
+    margin-top: 30px;
+    padding: 10px 0;
+    width: 236px;
+    cursor: pointer;
+    border: none;
+    color: var(--text-color);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .3s background;
+    visibility: hidden;
+}
+
+#restartBtn:hover {
+    background: var(--border-color);
+}
