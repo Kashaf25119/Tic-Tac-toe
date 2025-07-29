@@ -8,6 +8,8 @@ const restartBtn =document.querySelector('#restartBtn')
 let player = 'X';
 let isGamePause = false;
 let isGameStart = false;
+let xScore = 0;
+let oScore = 0;
 
 //Array of win condition
 const inputCell = [ '', '', '',
@@ -42,6 +44,13 @@ restartBtn.addEventListener('click', () => {
 
 const declarewinner = (winningIndices) => {
     titleHeader.textContent = `${player} Win`;
+    if(player == 'x'){
+        xScore++;
+        xPlayerDisplay.textContent = `${xScore}`
+    } else {
+        oScore++;
+        oPlayerDisplay.textContent = `${oScore}`
+    }
     isGamePause = true;
     winningIndices.forEach((index) => {
         cells[index].style.background = '#2A2343'
@@ -76,8 +85,8 @@ const checkWinner = () => {
         if (inputCell[a] == player &&
             inputCell[b] == player && 
             inputCell[c] == player) {
-                declarewinner([a, b, c]);
-                return true;
+            declarewinner([a, b, c]);
+            return true;
          }
     }
 
