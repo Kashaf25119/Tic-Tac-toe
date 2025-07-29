@@ -44,7 +44,7 @@ restartBtn.addEventListener('click', () => {
 
 const declarewinner = (winningIndices) => {
     titleHeader.textContent = `${player} Win`;
-    if(player == 'x'){
+    if(player == 'X'){
         xScore++;
         xPlayerDisplay.textContent = `${xScore}`
     } else {
@@ -70,12 +70,20 @@ const choosePlayer = (selectedPlayer) => {
     if(!isGameStart){
         player = selectedPlayer;
         if(player == 'X'){
-            xPlayerDisplay.classList.add('player-active');
-            oPlayerDisplay.classList.remove('player-active');
+         xPlayerDisplay.classList.add('player-active');
+         oPlayerDisplay.classList.remove('player-active');
+         xScore = 0;
+         xPlayerDisplay.textContent = "X"
+         oScore = 0;
+         oPlayerDisplay.textContent = "O"
         }
         else {
             oPlayerDisplay.classList.add('player-active');
             xPlayerDisplay.classList.remove('player-active');
+            xScore = 0;
+            xPlayerDisplay.textContent = "X"
+            oScore = 0;
+            oPlayerDisplay.textContent = "O"
         }
     }
 }
